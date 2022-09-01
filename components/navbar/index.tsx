@@ -48,6 +48,25 @@ const Navbar = () => {
       <div className="hidden space-x-2 sm:flex">
         {menuOptions
           .filter((option) => option.visible)
+          .filter((option) => !option.isSpecial)
+          .map((option) => (
+            <div
+              key={option.slug}
+              className={`${
+                option.isSpecial
+                  ? "bg-soft-green text-white hover:bg-darker-green"
+                  : "text-soft-green hover:bg-soft-green hover:text-white"
+              } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
+            >
+              <span>{option.icon && option.icon}</span>
+              <p className="">{option.title}</p>
+            </div>
+          ))}
+      </div>
+      <div className="hidden space-x-2 sm:flex">
+        {menuOptions
+          .filter((option) => option.visible)
+          .filter((option) => option.isSpecial)
           .map((option) => (
             <div
               key={option.slug}
@@ -74,23 +93,45 @@ const Navbar = () => {
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="fixed inset-x-0 h-[80vh] space-y-3 bg-white py-2 px-4"
+              className="fixed inset-x-0 flex h-[70vh] flex-col items-center justify-between space-y-3 bg-white py-4 px-4"
             >
-              {menuOptions
-                .filter((option) => option.visible)
-                .map((option) => (
-                  <div
-                    key={option.slug}
-                    className={`${
-                      option.isSpecial
-                        ? "bg-soft-green text-white hover:bg-darker-green"
-                        : "text-soft-green hover:bg-soft-green hover:text-white"
-                    } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
-                  >
-                    <span>{option.icon && option.icon}</span>
-                    <p className="">{option.title}</p>
-                  </div>
-                ))}
+              <div className="w-full">
+                {menuOptions
+                  .filter((option) => option.visible)
+                  .filter((option) => !option.isSpecial)
+
+                  .map((option) => (
+                    <div
+                      key={option.slug}
+                      className={`${
+                        option.isSpecial
+                          ? "bg-soft-green text-white hover:bg-darker-green"
+                          : "text-soft-green hover:bg-soft-green hover:text-white"
+                      } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
+                    >
+                      <span>{option.icon && option.icon}</span>
+                      <p className="">{option.title}</p>
+                    </div>
+                  ))}
+              </div>
+              <div className="w-full">
+                {menuOptions
+                  .filter((option) => option.visible)
+                  .filter((option) => option.isSpecial)
+                  .map((option) => (
+                    <div
+                      key={option.slug}
+                      className={`${
+                        option.isSpecial
+                          ? "bg-soft-green text-white hover:bg-darker-green"
+                          : "text-soft-green hover:bg-soft-green hover:text-white"
+                      } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
+                    >
+                      <span>{option.icon && option.icon}</span>
+                      <p className="">{option.title}</p>
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
         )}
