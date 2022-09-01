@@ -32,6 +32,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@headlessui/react@^0.0.0-insiders.920365c":
+  version "0.0.0-insiders.920365c"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-0.0.0-insiders.920365c.tgz#a701a71cfa79774f3a0e1fa4a0115f5f5f55c901"
+  integrity sha512-iA8w4y0tjN2Y45P+4a1DNC9ifLw56D2Lghlp+fCn2aZ5WX2lLuU9Zj/3HWL6dim5ZpGW3oSc5am1itiXZ+JXyg==
+
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.10.4.tgz"
