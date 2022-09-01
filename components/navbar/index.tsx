@@ -95,7 +95,7 @@ const Navbar = () => {
               onClick={(e) => e.stopPropagation()}
               className="fixed inset-x-0 flex h-[70vh] flex-col items-center justify-between space-y-3 bg-white py-4 px-4"
             >
-              <div className="w-full">
+              <div className="w-full space-y-2">
                 {menuOptions
                   .filter((option) => option.visible)
                   .filter((option) => !option.isSpecial)
@@ -107,7 +107,7 @@ const Navbar = () => {
                         option.isSpecial
                           ? "bg-soft-green text-white hover:bg-darker-green"
                           : "text-soft-green hover:bg-soft-green hover:text-white"
-                      } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
+                      } flex cursor-pointer items-center justify-center py-1 px-3 font-medium duration-150 ease-in-out `}
                     >
                       <span>{option.icon && option.icon}</span>
                       <p className="">{option.title}</p>
@@ -125,7 +125,7 @@ const Navbar = () => {
                         option.isSpecial
                           ? "bg-soft-green text-white hover:bg-darker-green"
                           : "text-soft-green hover:bg-soft-green hover:text-white"
-                      } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
+                      } flex cursor-pointer items-center justify-center px-3 py-1 font-medium duration-150 ease-in-out `}
                     >
                       <span>{option.icon && option.icon}</span>
                       <p className="">{option.title}</p>
