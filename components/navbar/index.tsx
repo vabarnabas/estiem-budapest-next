@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { FaPollH } from "react-icons/fa"
 import { HiMenu } from "react-icons/hi"
+import { Link } from "react-scroll"
 
 export interface MenuOption {
   title: string
@@ -14,7 +15,7 @@ export interface MenuOption {
 const menuOptions: MenuOption[] = [
   {
     title: "Rólunk",
-    slug: "about",
+    slug: "about-us",
     isSpecial: false,
     visible: true,
   },
@@ -50,17 +51,26 @@ const Navbar = () => {
           .filter((option) => option.visible)
           .filter((option) => !option.isSpecial)
           .map((option) => (
-            <div
+            <Link
               key={option.slug}
-              className={`${
-                option.isSpecial
-                  ? "bg-soft-green text-white hover:bg-darker-green"
-                  : "text-soft-green hover:bg-soft-green hover:text-white"
-              } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
+              activeClass="active"
+              to={option.slug}
+              spy={true}
+              smooth={true}
+              offset={-48}
+              duration={500}
             >
-              <span>{option.icon && option.icon}</span>
-              <p className="">{option.title}</p>
-            </div>
+              <div
+                className={`${
+                  option.isSpecial
+                    ? "bg-soft-green text-white hover:bg-darker-green"
+                    : "text-soft-green hover:bg-soft-green hover:text-white"
+                } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
+              >
+                <span>{option.icon && option.icon}</span>
+                <p className="">{option.title}</p>
+              </div>
+            </Link>
           ))}
       </div>
       <div className="hidden space-x-2 sm:flex">
@@ -101,17 +111,26 @@ const Navbar = () => {
                   .filter((option) => !option.isSpecial)
 
                   .map((option) => (
-                    <div
+                    <Link
                       key={option.slug}
-                      className={`${
-                        option.isSpecial
-                          ? "bg-soft-green text-white hover:bg-darker-green"
-                          : "text-soft-green hover:bg-soft-green hover:text-white"
-                      } flex cursor-pointer items-center justify-center py-2 px-3 font-medium duration-150 ease-in-out `}
+                      activeClass="active"
+                      to={option.slug}
+                      spy={true}
+                      smooth={true}
+                      offset={-48}
+                      duration={500}
                     >
-                      <span>{option.icon && option.icon}</span>
-                      <p className="">{option.title}</p>
-                    </div>
+                      <div
+                        className={`${
+                          option.isSpecial
+                            ? "bg-soft-green text-white hover:bg-darker-green"
+                            : "text-soft-green hover:bg-soft-green hover:text-white"
+                        } flex cursor-pointer items-center justify-center py-2 px-3 font-medium duration-150 ease-in-out `}
+                      >
+                        <span>{option.icon && option.icon}</span>
+                        <p className="">{option.title}</p>
+                      </div>
+                    </Link>
                   ))}
               </div>
               <div className="w-full">
