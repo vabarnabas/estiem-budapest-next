@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="relative flex h-full w-full items-center justify-center p-6">
         <div className="absolute h-full w-full">
           <div className="relative h-full w-full ">
-            <Image src="/images/cover.jpeg" layout="fill" objectFit="cover" />
+            <Image src="/images/cover2.jpg" layout="fill" objectFit="cover" />
             <div className="absolute inset-0 bg-soft-green/60"></div>
           </div>
         </div>
@@ -20,10 +20,10 @@ const Hero = () => {
           <div className="flex h-full flex-col items-center sm:items-start">
             <div className="">
               <p className="text-center text-5xl font-bold sm:text-left sm:text-5xl">
-                ESTIEM is the <br className="hidden sm:block" /> Best Team
+                ESTIEM is the <br className="hidden sm:block" /> BestTeam!
               </p>
-              <p className="mt-1 text-center text-lg sm:text-left">
-                Csatlakozz egy nagyszerű nemzetközi{" "}
+              <p className="mt-1 text-center text-lg leading-snug sm:text-left">
+                Csatlakozz egy nagyszerű nemzetközi
                 <br className="hidden sm:block" /> csapathoz!
               </p>
             </div>
