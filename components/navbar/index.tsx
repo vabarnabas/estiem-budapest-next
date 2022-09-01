@@ -1,5 +1,6 @@
 import React from "react"
-import { FaPoll, FaPollH } from "react-icons/fa"
+import { FaPollH } from "react-icons/fa"
+import { HiMenu } from "react-icons/hi"
 
 export interface MenuOption {
   title: string
@@ -40,24 +41,28 @@ const menuOptions: MenuOption[] = [
 
 const Navbar = () => {
   return (
-    <div className="fixed inset-x-0 top-0 flex h-14 items-center justify-between bg-white px-6">
+    <div className="fixed inset-x-0 top-0 flex h-12 items-center justify-between bg-white px-6">
       <p className="font-bold italic text-soft-green">tESTIEM</p>
-      <div className="flex space-x-2">
+      <div className="hidden space-x-2 sm:flex">
         {menuOptions
           .filter((option) => option.visible)
           .map((option) => (
             <div
               key={option.slug}
+              onClick={() => alert("a")}
               className={`${
                 option.isSpecial
                   ? "bg-soft-green text-white hover:bg-darker-green"
                   : "text-soft-green hover:bg-soft-green hover:text-white"
-              } flex cursor-pointer items-center justify-center px-3 py-1 font-medium  duration-150 ease-in-out `}
+              } flex cursor-pointer items-center justify-center px-3 py-1 text-sm font-medium duration-150 ease-in-out `}
             >
               <span>{option.icon && option.icon}</span>
               <p className="">{option.title}</p>
             </div>
           ))}
+      </div>
+      <div className="flex sm:hidden">
+        <HiMenu className="cursor-pointer text-lg text-soft-green" />
       </div>
     </div>
   )
