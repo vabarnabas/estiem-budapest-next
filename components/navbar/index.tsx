@@ -107,7 +107,7 @@ const Navbar = () => {
                         option.isSpecial
                           ? "bg-soft-green text-white hover:bg-darker-green"
                           : "text-soft-green hover:bg-soft-green hover:text-white"
-                      } flex cursor-pointer items-center justify-center py-1 px-3 font-medium duration-150 ease-in-out `}
+                      } flex cursor-pointer items-center justify-center py-2 px-3 font-medium duration-150 ease-in-out `}
                     >
                       <span>{option.icon && option.icon}</span>
                       <p className="">{option.title}</p>
@@ -125,7 +125,7 @@ const Navbar = () => {
                         option.isSpecial
                           ? "bg-soft-green text-white hover:bg-darker-green"
                           : "text-soft-green hover:bg-soft-green hover:text-white"
-                      } flex cursor-pointer items-center justify-center px-3 py-1 font-medium duration-150 ease-in-out `}
+                      } flex cursor-pointer items-center justify-center px-3 py-2 font-medium duration-150 ease-in-out `}
                     >
                       <span>{option.icon && option.icon}</span>
                       <p className="">{option.title}</p>
