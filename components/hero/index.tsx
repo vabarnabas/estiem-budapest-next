@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="h-full w-full text-soft-green">
       <div className="relative flex h-full w-full items-center justify-center p-4">
-        <div className="absolute flex flex-col items-center gap-x-12 px-4 sm:left-6 sm:flex-row">
+        <div className="sm-px-0 absolute flex flex-col items-center gap-x-12 px-4 sm:left-6 sm:flex-row">
           <div className="flex h-full flex-col justify-between">
             <div className="">
               <p className="text-center text-4xl font-bold sm:text-left sm:text-5xl">
