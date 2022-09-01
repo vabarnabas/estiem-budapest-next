@@ -41,7 +41,7 @@ const menuOptions: MenuOption[] = [
 
 const Navbar = () => {
   return (
-    <div className="fixed inset-x-0 top-0 flex h-12 items-center justify-between bg-white px-6">
+    <div className="fixed inset-x-0 top-0 flex h-12 items-center justify-between border-b border-soft-green/90 bg-white px-6 ">
       <p className="font-bold italic text-soft-green">tESTIEM</p>
       <div className="hidden space-x-2 sm:flex">
         {menuOptions
@@ -49,7 +49,6 @@ const Navbar = () => {
           .map((option) => (
             <div
               key={option.slug}
-              onClick={() => alert("a")}
               className={`${
                 option.isSpecial
                   ? "bg-soft-green text-white hover:bg-darker-green"

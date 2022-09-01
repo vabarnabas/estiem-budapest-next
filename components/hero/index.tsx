@@ -9,7 +9,7 @@ import {
 const Hero = () => {
   return (
     <div className="h-full w-full text-white">
-      <div className="relative flex h-full w-full items-center justify-center p-4">
+      <div className="relative flex h-full w-full items-center justify-center p-6">
         <div className="absolute h-full w-full">
           <div className="relative h-full w-full ">
             <Image src="/images/cover.jpeg" layout="fill" objectFit="cover" />
