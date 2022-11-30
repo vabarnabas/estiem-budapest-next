@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
     <div id="about-us" className="w-full text-white sm:h-full">
       <div className="relative flex h-full w-full flex-col items-center justify-center py-8 px-6 sm:flex-row sm:gap-x-12 sm:px-12">
-        <div className="grid w-max grid-cols-2 gap-6 gap-y-10 sm:gap-x-10">
+        <div className="grid w-max grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-10">
           <NumberCard value={80} subtitle="Országban vagyunk jelen" />
           <NumberCard value={80} subtitle="Országban vagyunk jelen" />
           <NumberCard value={80} subtitle="Országban vagyunk jelen" />
