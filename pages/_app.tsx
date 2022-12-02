@@ -1,19 +1,17 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
-import { useEffect, useMemo, useState } from "react"
-import Cookies from "universal-cookie"
+import { useMemo } from "react"
 import English from "../lang/en.json"
 import Hungarian from "../lang/hu.json"
 import { IntlProvider } from "react-intl"
+import { useRouter } from "next/router"
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const cookies = new Cookies()
-  const [langCookie, setLangCookie] = useState(
-    cookies.get("estiem.lang.key") || "hu"
-  )
+  const { locale } = useRouter()
+  const [shortLocale] = locale ? locale.split("-") : ["hu"]
 
   const messages = useMemo(() => {
-    switch (langCookie) {
+    switch (shortLocale) {
       case "hu":
         return Hungarian
       case "en":
@@ -21,14 +19,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       default:
         return Hungarian
     }
-  }, [langCookie])
-
-  useEffect(() => {
-    setLangCookie(cookies.get("estiem.lang.key") || "hu")
-  }, [cookies.get("estiem.lang.key")])
+  }, [shortLocale])
 
   return (
-    <IntlProvider locale={langCookie} messages={messages} onError={() => null}>
+    <IntlProvider locale={shortLocale} messages={messages} onError={() => null}>
       <Component {...pageProps} />
     </IntlProvider>
   )

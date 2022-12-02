@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import React, { useState } from "react"
 import { FaPollH } from "react-icons/fa"
 import { HiMenu } from "react-icons/hi"
@@ -42,6 +43,7 @@ const menuOptions: MenuOption[] = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
 
   return (
     <div className="fixed inset-x-0 top-0 flex h-12 items-center justify-between bg-white px-6 shadow shadow-soft-green/10 sm:px-12">
@@ -73,23 +75,27 @@ const Navbar = () => {
             </Link>
           ))}
       </div>
-      <div className="hidden space-x-2 sm:flex">
-        {menuOptions
-          .filter((option) => option.visible)
-          .filter((option) => option.isSpecial)
-          .map((option) => (
-            <div
-              key={option.slug}
-              className={`${
-                option.isSpecial
-                  ? "bg-soft-green text-white hover:bg-darker-green"
-                  : "text-soft-green hover:bg-soft-green hover:text-white"
-              } flex cursor-pointer items-center justify-center rounded-md px-4 py-1.5 text-sm font-medium duration-150 ease-in-out `}
-            >
-              <span>{option.icon && option.icon}</span>
-              <p className="">{option.title}</p>
-            </div>
-          ))}
+      <div className="flex space-x-2 text-sm">
+        <p
+          onClick={() =>
+            router.push(router.pathname, router.pathname, { locale: "hu-HU" })
+          }
+          className={`cursor-pointer ${
+            router.locale === "hu-HU" ? "text-soft-green" : ""
+          }`}
+        >
+          HU
+        </p>
+        <p
+          onClick={() =>
+            router.push(router.pathname, router.pathname, { locale: "en-US" })
+          }
+          className={`cursor-pointer ${
+            router.locale === "en-US" ? "text-soft-green" : ""
+          }`}
+        >
+          EN
+        </p>
       </div>
       <div className="flex sm:hidden">
         <HiMenu

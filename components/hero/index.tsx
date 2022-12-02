@@ -3,13 +3,10 @@ import {
   FaFacebookMessenger,
   FaFacebookSquare,
   FaInstagram,
-  FaPollH,
 } from "react-icons/fa"
-import { useIntl } from "react-intl"
+import { FormattedMessage } from "react-intl"
 
 const Hero = () => {
-  const { formatMessage } = useIntl()
-
   return (
     <div className="h-full w-full text-white">
       <div className="relative flex h-full w-full items-center justify-center p-6">
@@ -22,10 +19,10 @@ const Hero = () => {
         <div className="absolute flex flex-col items-center justify-center px-4 sm:left-12 sm:flex-row sm:px-0">
           <div className="flex h-full flex-col items-center sm:items-start">
             <p className="max-w-[500px] text-center text-5xl font-bold sm:text-left sm:text-5xl">
-              {formatMessage({ id: "hero.title" })}
+              <FormattedMessage id="hero.title" />
             </p>
             <p className="mt-2 max-w-[250px] text-center text-lg leading-snug sm:text-left">
-              {formatMessage({ id: "hero.subtitle" })}
+              <FormattedMessage id="hero.subtitle" />
             </p>
             {/* <button className="mt-3 flex w-max items-center justify-center rounded-md bg-white px-6 py-1.5 text-soft-green hover:bg-slate-100">
               <FaPollH className="mr-2 text-sm" />{" "}
