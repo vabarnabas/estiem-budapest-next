@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^0.0.0-insiders.920365c",
+    "@svgr/webpack": "^6.5.1",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
