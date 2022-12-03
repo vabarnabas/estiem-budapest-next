@@ -42,7 +42,18 @@ const Navbar = () => {
 
   return (
     <div className="fixed inset-x-0 top-0 flex h-12 items-center justify-between bg-white px-6 shadow shadow-soft-green/10 sm:px-12">
-      <p className="font-bold italic text-soft-green">tESTIEM</p>
+      <Link
+        activeClass="active"
+        to={"hero"}
+        spy={true}
+        smooth={true}
+        offset={-48}
+        duration={500}
+      >
+        <p className="cursor-pointer font-bold italic text-soft-green">
+          tESTIEM
+        </p>
+      </Link>
       <div className="hidden space-x-2 sm:flex">
         {menuOptions
           .filter((option) => option.visible)

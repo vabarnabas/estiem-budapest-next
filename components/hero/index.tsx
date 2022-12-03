@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl"
 
 const Hero = () => {
   return (
-    <div className="h-full w-full text-white">
+    <div id="hero" className="h-full w-full text-white">
       <div className="relative flex h-full w-full items-center justify-center p-6">
         <div className="absolute h-full w-full">
           <div className="relative h-full w-full">
