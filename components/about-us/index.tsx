@@ -1,4 +1,5 @@
 import React from "react"
+import { FormattedMessage } from "react-intl"
 import NumberCard from "../number-card"
 
 const AboutUs = () => {
@@ -12,7 +13,9 @@ const AboutUs = () => {
           <NumberCard value={80} subtitle="Országban vagyunk jelen" />
         </div>
         <div className="mt-12 flex w-fit flex-col text-slate-500 sm:mt-0 sm:text-base">
-          <p className="mb-2 text-2xl font-semibold text-soft-green">Rólunk</p>
+          <div className="mb-2 text-2xl font-semibold text-soft-green">
+            <FormattedMessage id="about-us.title" />
+          </div>
           <p className="">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             tincidunt est sed dictum hendrerit. Praesent in fringilla ante, eget

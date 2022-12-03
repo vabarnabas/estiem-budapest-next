@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import React, { useState } from "react"
 import { FaPollH } from "react-icons/fa"
 import { HiMenu } from "react-icons/hi"
+import { useIntl } from "react-intl"
 import { Link } from "react-scroll"
 
 export interface MenuOption {
@@ -13,37 +14,31 @@ export interface MenuOption {
   action?: (...params: any) => void
 }
 
-const menuOptions: MenuOption[] = [
-  {
-    title: "Rólunk",
-    slug: "about-us",
-    isSpecial: false,
-    visible: true,
-  },
-  {
-    title: "Eseményeink",
-    slug: "events",
-    isSpecial: false,
-    visible: true,
-  },
-  {
-    title: "Támogatóink",
-    slug: "sponsors",
-    isSpecial: false,
-    visible: true,
-  },
-  // {
-  //   title: "Felvételi",
-  //   slug: "invitation",
-  //   isSpecial: true,
-  //   visible: true,
-  //   icon: <FaPollH className="mr-1 text-sm" />,
-  // },
-]
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
+  const { formatMessage } = useIntl()
+
+  const menuOptions: MenuOption[] = [
+    {
+      title: formatMessage({ id: "navbar.about-us" }),
+      slug: "about-us",
+      isSpecial: false,
+      visible: true,
+    },
+    {
+      title: formatMessage({ id: "navbar.events" }),
+      slug: "events",
+      isSpecial: false,
+      visible: true,
+    },
+    {
+      title: formatMessage({ id: "navbar.sponsors" }),
+      slug: "sponsors",
+      isSpecial: false,
+      visible: true,
+    },
+  ]
 
   return (
     <div className="fixed inset-x-0 top-0 flex h-12 items-center justify-between bg-white px-6 shadow shadow-soft-green/10 sm:px-12">
